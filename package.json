@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "abc": "vue-cli-service serve"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.1",
     "vue": "^2.6.11",
@@ -17,5 +19,10 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
