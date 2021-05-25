@@ -9,8 +9,9 @@
             <el-input id="newusername" v-model="newUser.newusername" clearable></el-input>
             <el-input id="newpassword" v-model="newUser.newpassword" show-password clearable></el-input>
         </div>
+        <!--  v-loading.fullscreen.lock="fullscreenLoading" -->
         <div id="registerSubmit">
-            <el-button id="systemSubmit" @click="registerSystem">注册</el-button>
+            <el-button id="systemSubmit" @click="registerSystem" >注册</el-button>
         </div>
       </el-card>
     </div>
@@ -27,22 +28,30 @@ export default {
             newUser:{
                 newusername:"",
                 newpassword:""
-            }
+            },
+            fullscreenLoading: false
         }
     },
     methods:{
       // CORS 
-      registerSystem(){
-        //链式调用
-        // Axios.get('http://localhost:3000/register',{
-        //   params:this.newUser
-        // }).then(function(reponse){
-        //   alert(reponse.data)
-        // });
-        Axios.post(url+'/register',{
+      registerSystem(){     
+        // Axios.get(url +'/register',{
+        //   params: this.newUser
+        // }).then(function(response){
+        //   alert(response.data.state + '\n' +response.data.message )
+        // })
+        // this.fullscreenLoading = true;
+        // that = this
+        Axios.post(url + '/register',{
           params:this.newUser
-        }).then(function(response){
-          alert(response.data)
+        }).then((response)=>{
+          console.log(response)
+            // if(response.data.state =="success"){
+            //   this.$message('注册用户成功');
+            // }
+            // else{
+            //    this.$message('注册用户失败');
+            // }         
         })
       }
     }

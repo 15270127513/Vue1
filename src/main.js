@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import echarts from 'echarts'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueRouter from 'vue-router'
@@ -52,6 +52,8 @@ const router = new VueRouter({
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts
+
 
 new Vue({
   router,
